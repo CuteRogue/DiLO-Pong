@@ -6,8 +6,11 @@ public class BallController : MonoBehaviour
 {
     public Vector2 speed;
 
-    private void Update()
+    private Rigidbody2D rig;
+
+    private void Start()
     {
-        transform.Translate(speed * Time.deltaTime);
+        rig = GetComponent<Rigidbody2D>();
+        rig.velocity = speed;
     }
 }

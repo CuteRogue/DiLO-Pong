@@ -8,9 +8,11 @@ public class PaddleController : MonoBehaviour
     public KeyCode upKey;
     public KeyCode downKey;
 
+    private Rigidbody2D rig;
+
     private void Start()
     {
-
+        rig = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -34,6 +36,6 @@ public class PaddleController : MonoBehaviour
 
     private void MoveObject(Vector2 movement)
     {
-        transform.Translate(movement * Time.deltaTime);
+        rig.velocity = movement;
     }
 }
